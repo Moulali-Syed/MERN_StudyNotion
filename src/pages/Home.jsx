@@ -4,10 +4,11 @@ import HighLightText from '../components/core/HomePage/HighLightText';
 import CTAButton from '../components/core/HomePage/CTAButton';
 import Banner from '../assets/Images/banner.mp4';
 import CodeBlocks from '../components/core/HomePage/CodeBlocks';
-import Footer from '../components/core/common/Footer';
+import Footer from '../components/common/Footer';
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
 import TimeLineSection from '../components/core/HomePage/TimelineSection';
 import InstructorSection from '../components/core/HomePage/InstructorSection';
+import ExploreMore from '../components/core/HomePage/ExploreMore';
 
 const Home = () => {
   return (
@@ -66,7 +67,7 @@ const Home = () => {
               'Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you.'
             }
             ctabtn1={{
-              btnText: 'try it yourself',
+              btnText: 'Try it yourself',
               linkto: '/signup',
               active: true,
             }}
@@ -87,15 +88,15 @@ const Home = () => {
             position={'lg:flex-row-reverse'}
             heading={
               <div className="text-4xl font-bold">
-                Unlock Your <HighLightText text={'coding potential '} />
-                with our online courses
+                Start
+                <HighLightText text={` coding in seconds `} />
               </div>
             }
             subheading={
-              'Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you.'
+              "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
             }
             ctabtn1={{
-              btnText: 'try it yourself',
+              btnText: 'Continue Lesson',
               linkto: '/signup',
               active: true,
             }}
@@ -109,12 +110,14 @@ const Home = () => {
             backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
+
+        <ExploreMore />
       </div>
       {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
         <div className="homepage_bg h-[333px]">
-          <div className="w-11/12 max-w-maxContent flex items-center justify-between gap-5 mx-auto">
-            <div className="flex gap-7 text-white mt-[150px] mx-auto">
+          <div className="w-11/12 max-w-maxContent flex items-center justify-between gap-5 mx-auto ">
+            <div className="flex flex-col gap-7 text-white mt-[200px] mx-auto md:flex-row">
               <CTAButton active={true} linkto={'/signup'}>
                 <div className="flex items-center gap-3">
                   Explore Full Catalog <FaArrowRight />
@@ -128,12 +131,12 @@ const Home = () => {
         </div>
 
         <div className="w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-7">
-          <div className="flex gap-5 mb-10 mt-20">
-            <div className="text-4xl font-semibold w-[45%]">
+          <div className="flex flex-col gap-5 mb-10 mt-20 md:flex-row">
+            <div className="text-4xl font-semibold md:w-[45%]">
               Get the skills you need for a
               <HighLightText text=" Job that is in demand" />
             </div>
-            <div className="flex flex-col gap-10 w-[40%] items-start">
+            <div className="flex flex-col gap-10 md:w-[40%] items-start">
               <p className="text-[16px]">
                 The modern StudyNotion is the dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
@@ -150,9 +153,9 @@ const Home = () => {
       </div>
 
       {/* Section 3 */}
-      <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8  text-white">
+      <div className="w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8  text-white">
         <InstructorSection />
-        <h2 className="text-center text-4xl font-semibold mt-10">
+        <h2 className="text-2xl md:text-center font-semibold mt-10">
           Review From Other Learners
         </h2>
         {/* Review Slider */}
