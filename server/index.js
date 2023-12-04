@@ -55,6 +55,13 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api/v1/test', (req, res) => {
+  return res.json({
+    success: true,
+    message: 'This is a test route ...',
+  });
+});
+
 // Listening to the server
 app.listen(PORT, () => {
   console.log(`App is listening at ${PORT}`);

@@ -2,8 +2,16 @@ import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import Tab from '../../common/Tab';
 import { ACCOUNT_TYPE } from '../../../utils/constants';
+import { toast } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { sendOtp } from '../../../services/operations/authAPI';
+import { setSignupData } from '../../../slices/authSlice';
 
 const SignupForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -27,9 +35,17 @@ const SignupForm = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
+      toast.error('Passwords Do Not Match');
       return;
     }
+    const signupData = {
+      ...formData,
+      accountType,
+    };
 
+    dispatch(setSignupData(signupData));
+
+    dispatch(sendOtp(formData.email, navigate));
     // Reset
     setFormData({
       firstName: '',
