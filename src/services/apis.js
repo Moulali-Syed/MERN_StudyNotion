@@ -9,3 +9,7 @@ export const endpoints = {
   RESETPASSTOKEN_API: '/api/v1/auth/reset-password-token',
   RESETPASSWORD_API: '/api/v1/auth/reset-password',
 };
+
+export const contactusEndpoint = {
+  CONTACT_API: '/api/v1/reach/contact',
+};

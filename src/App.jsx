@@ -7,6 +7,8 @@ import Navbar from './components/common/Navbar';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import VerifyEmail from './pages/VerifyEmail';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -19,6 +21,10 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/update-password/:id" element={<UpdatePassword />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="dashboard/my-profile" element={<MyProfile />} />
       </Routes>
     </div>
   );
