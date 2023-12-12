@@ -32,9 +32,12 @@ export const login = (email, password, navigate) => {
       const userImage = response.data?.user?.image
         ? response.data.user.image
         : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName}${response.data.user.lastName}`;
-      console.log(response.data.user, 'from login api hit');
+      // console.log(response.data.user, 'from login api hit');
       dispatch(setUser({ ...response.data.user, image: userImage }));
+      // console.log('After SetUser:', response.data.user);
       localStorage.setItem('token', JSON.stringify(response.data.token));
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+
       navigate('/dashboard/my-profile');
     } catch (error) {
       console.log('Error Logging IN', error);
