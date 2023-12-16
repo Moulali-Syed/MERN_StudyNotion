@@ -9,7 +9,7 @@ exports.auth = async (req, res, next) => {
     const token =
       req.cookies.token ||
       req.body.token ||
-      req.header('Authorisation').replace('Bearer ', '');
+      req.header('Authorization').replace('Bearer ', '');
     if (!token) {
       return res
         .status(401)
@@ -53,6 +53,7 @@ exports.isStudent = async (req, res, next) => {
 };
 //isInstructor
 exports.isInstructor = async (req, res, next) => {
+  console.log(req.user.role);
   try {
     if (req.user.role !== 'Instructor') {
       return res.status(404).json({

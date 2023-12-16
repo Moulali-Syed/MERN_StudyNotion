@@ -26,3 +26,23 @@ export const profileEndpoints = {
   GET_USER_ENROLLED_COURSES_API: '/api/v1/profile/getEnrolledCourses',
   GET_INSTRUCTOR_DATA_API: '/api/v1/profile/instructorDashboard',
 };
+
+// COURSE ENDPOINTS
+export const courseEndpoints = {
+  GET_ALL_COURSE_API: '/api/v1/course/getAllCourses',
+  COURSE_DETAILS_API: '/api/v1/course/getCourseDetails',
+  EDIT_COURSE_API: '/api/v1/course/editCourse',
+  COURSE_CATEGORIES_API: '/api/v1/course/showAllCategories',
+  CREATE_COURSE_API: '/api/v1/course/createCourse',
+  CREATE_SECTION_API: '/api/v1/course/addSection',
+  CREATE_SUBSECTION_API: '/api/v1/course/addSubSection',
+  UPDATE_SECTION_API: '/api/v1/course/updateSection',
+  UPDATE_SUBSECTION_API: '/api/v1/course/updateSubSection',
+  GET_ALL_INSTRUCTOR_COURSES_API: '/api/v1/course/getInstructorCourses',
+  DELETE_SECTION_API: '/api/v1/course/deleteSection',
+  DELETE_SUBSECTION_API: '/api/v1/course/deleteSubSection',
+  DELETE_COURSE_API: '/api/v1/course/deleteCourse',
+  GET_FULL_COURSE_DETAILS_AUTHENTICATED: '/api/v1/course/getFullCourseDetails',
+  LECTURE_COMPLETION_API: '/api/v1/course/updateCourseProgress',
+  CREATE_RATING_API: '/api/v1/course/createRating',
+};
